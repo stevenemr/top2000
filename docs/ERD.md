@@ -21,15 +21,15 @@ erDiagram
 
     %% If the artist is a band, the members can be added here
     BAND_ARTIST {
-        int band_id PK
-        int artist_id PK
+        int band_id "PK/FK"
+        int artist_id "PK/FK"
         datetime created_at
         datetime updated_at
     }
 
     ARTIST_SONG {
-        int artist_id PK
-        int song_id PK
+        int artist_id "PK/FK"
+        int song_id "PK/FK"
         datetime created_at
         datetime updated_at
     }
@@ -46,9 +46,9 @@ erDiagram
 
     RANKING {
         int id PK
-        int position
+        int song_id FK
         year year
-        int song_id
+        int position
         datetime created_at
         datetime updated_at
     }
