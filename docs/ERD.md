@@ -13,6 +13,7 @@ erDiagram
     ARTIST {
         int id PK
         string name
+        date dob
         text content
         datetime created_at
         datetime updated_at
