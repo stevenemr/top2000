@@ -6,7 +6,7 @@ title: Top 2000
 ---
 erDiagram
     ARTIST ||--o{ ARTIST_SONG : ""
-    ARTIST ||--o{ ARTIST_ARTIST : "Is member"
+    ARTIST ||--o{ BAND_ARTIST : "Is member"
     ARTIST_SONG }o--|| SONG : ""
     SONG ||--o{ RANKING : "Has"
 
@@ -20,7 +20,7 @@ erDiagram
     }
 
     %% If the artist is a band, the members can be added here
-    ARTIST_ARTIST {
+    BAND_ARTIST {
         int band_id PK
         int artist_id PK
         datetime created_at
