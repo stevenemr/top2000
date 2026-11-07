@@ -82,6 +82,12 @@ All pages should be generated as Livewire pages and can be added with this comma
 sail artisan make:livewire pages::... # e.g. pages::statistics
 ```
 
+## Documentation
+
+In the `/docs` folder there is some documentation, such as diagrams.
+
+- **Entity Relationship Diagram:** [ERD.md](docs/ERD.md)
+
 ## Disclaimer
 
 🇬🇧 This is a non-commercial hobby project. It is not affiliated with, endorsed by, or connected to NPO, NPO Radio 2, or the organizers of the Top 2000. I do not claim any rights to the Top 2000 and I do not earn any money with this project.
