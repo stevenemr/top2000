@@ -24,10 +24,21 @@ class Artist extends Model
 
     /**
      * Check if this artist is a band.
+     * 
      * @return bool
      */ 
     public function isBand(): bool
     {
         return $this->members()->count() > 0;
+    }
+
+    /**
+     * Get all songs of the artist.
+     *
+     * @return BelongsToMany
+     */
+    public function songs(): BelongsToMany
+    {
+        return $this->belongsToMany(Song::class);
     }
 }

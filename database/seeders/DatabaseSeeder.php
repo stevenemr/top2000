@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Artist;
+use App\Models\Ranking;
+use App\Models\Song;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,11 +17,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Solo Artists
+        Artist::factory(1000)
+            ->has(Song::factory(10)->has(Ranking::factory(3)))
+            ->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // Bands
+        Artist::factory(1000)
+            ->has(Artist::factory(3), 'members')
+            ->has(Song::factory(15)->has(Ranking::factory(3)))
+            ->create();
     }
 }
